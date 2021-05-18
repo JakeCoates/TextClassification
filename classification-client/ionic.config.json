@@ -1,0 +1,7 @@
+{
+  "name": "classificationClient",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
