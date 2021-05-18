@@ -31,8 +31,21 @@ The classification depends on the number of words found in the text from the fol
 ## pre-requisite
 `npm install`
 
+## modifying lists
+Modify the file `classification-lists.json`
+
 ## classificationClient
 `npm run client`
 
 ## classification-server
 `npm run server`
+
+# Tools
+
+## Swagger docs
+Swagger documentation can be found at /api-docs
+
+# Improvements
+
+## server
+In the server I would add a testing framework and unit tests to validate my work
