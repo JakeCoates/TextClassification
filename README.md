@@ -49,3 +49,9 @@ Swagger documentation can be found at /api-docs
 
 ## server
 In the server I would add a testing framework and unit tests to validate my work
+
+## client
+I would build out some spec files with unit testing
+I would develop the colour schemes to not be default ionic
+I would implement a dark mode as I removed it as it didn't look nice with default colour scheme
+I would wireframe a solution first and demo that solution before implementing
