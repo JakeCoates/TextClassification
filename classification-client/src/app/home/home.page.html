@@ -8,37 +8,35 @@
 
 <ion-content [fullscreen]="true">
   <!-- Current text area -->
-  <ion-item>
+  <ion-item [formGroup]="classificationForm">
     <ion-label position="stacked">Text Classification input</ion-label>
     <ion-textarea
-      placeholder="Type here to classify your text!">
+      placeholder="Type here to classify your text!"
+      formControlName="text">
     </ion-textarea>
   </ion-item>
 
   <!-- Submit button -->
-  <ion-button expand="block">
+  <ion-button expand="block" (click)="classify()">
     Submit
   </ion-button>
 
-  <ion-item-divider></ion-item-divider>
+  <ng-container *ngIf="classification.historicalClassifications.length > 0">
+    <ion-item-divider></ion-item-divider>
 
-  <!-- History title -->
-  <ion-item>
-    <h1>
-      Previous submissions
-    </h1>
-  </ion-item>
+    <!-- History title -->
+    <ion-item>
+      <h1>
+        Previous submissions
+      </h1>
+    </ion-item>
 
-  <!-- History -->
-  <ion-card *ngFor="let submission of history">
-    <ion-card-header>
-      <ion-card-title>{{submission.text}}</ion-card-title>
-    </ion-card-header>
+    <!-- History -->
+    <ion-item *ngFor="let submission of classification.historicalClassifications.reverse()">
+      <ion-button (click)="copyText(submission)"><ion-icon name="copy-outline"></ion-icon></ion-button>
+      <ion-label class="ion-text-wrap">{{submission.text}}</ion-label>
+      <ion-note slot="end" color="secondary">{{submission?.classification}}</ion-note>
+    </ion-item>
 
-    <ion-card-content>
-      <ion-button expand="block">
-        Re-submit
-      </ion-button>
-    </ion-card-content>
-  </ion-card>
+  </ng-container>
 </ion-content>

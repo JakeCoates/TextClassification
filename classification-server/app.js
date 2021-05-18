@@ -13,7 +13,10 @@ app.use(cors());
 app.use(express.json());
 
 
+app.options('*', cors());
+
 var port = 8000;
+app.set('port', process.env.PORT || port)
 
 app.use("/classify", classifyRouter);
 
@@ -54,7 +57,6 @@ app.get('/', (req, res) => {
 
 expressSwagger(options)
 
-// for local
-app.listen(port, () => {
-    console.log(`Server is listening on port: ${port}`);
+app.listen(app.get('port'), () => {
+    console.log(`Server is listening on port: ${app.get('port')}`);
 });

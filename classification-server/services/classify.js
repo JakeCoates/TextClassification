@@ -10,7 +10,7 @@ exports.index = (req, res) => {
  * @returns classification text
  */
 exports.classify_text = (req) => {
-    var text = req.text;
+    var text = req.text.toLowerCase();
 
     // check to make sure that lists actually exist
     if(classificationLists.lists.length > 0) {
@@ -19,7 +19,7 @@ exports.classify_text = (req) => {
             list.count = 0;
             // using regex count how many times a qualifier appears and append it to the count
             list.qualifiers.forEach(qualifier => {
-                list.count += (text.match(new RegExp(qualifier, "g")) || []).length;
+                list.count += (text.match(new RegExp(qualifier.toLowerCase(), "g")) || []).length;
             });
         });
         
