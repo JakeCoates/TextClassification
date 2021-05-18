@@ -7,6 +7,15 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  public history = [
+    {
+      text: 'example 1'
+    },
+    {
+      text: 'example 2'
+    }
+  ];
+
   constructor() {}
 
 }
