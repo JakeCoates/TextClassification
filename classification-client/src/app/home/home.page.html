@@ -32,7 +32,7 @@
     </ion-item>
 
     <!-- History -->
-    <ion-item *ngFor="let submission of classification.historicalClassifications.reverse()">
+    <ion-item *ngFor="let submission of classification.historicalClassifications">
       <ion-button (click)="copyText(submission)"><ion-icon name="copy-outline"></ion-icon></ion-button>
       <ion-label class="ion-text-wrap">{{submission.text}}</ion-label>
       <ion-note slot="end" color="secondary">{{submission?.classification}}</ion-note>

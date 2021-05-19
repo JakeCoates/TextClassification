@@ -5,6 +5,7 @@
   "main": "",
   "scripts": {
     "postinstall": "cd classification-client && npm install && cd ../classification-server && npm install",
+    "builds": "cd classification-client && npm run build:prod",
     "client": "cd classification-client && ionic serve",
     "server": "cd classification-server && node app.js"
   },

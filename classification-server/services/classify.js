@@ -1,4 +1,4 @@
-var classificationLists = require("../../classification-lists.json");
+var classificationLists = require("../classification-lists.json");
 
 exports.index = (req, res) => {
     res.send('NOT IMPLEMENTED: Site Home Page');

@@ -35,7 +35,7 @@ export class HomePage implements OnInit {
   classify() {
     const text: Classification = this.classificationForm.value;
     this.classification.classifyText(text).pipe(take(1)).subscribe((result) => {
-      this.classification.historicalClassifications.push(result);
+      this.classification.historicalClassifications.unshift(result);
     })
   }
 

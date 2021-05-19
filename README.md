@@ -32,13 +32,17 @@ The classification depends on the number of words found in the text from the fol
 `npm install`
 
 ## modifying lists
-Modify the file `classification-lists.json`
+Modify the file `classification-lists.json` inside the classification-server folder
 
 ## classificationClient
 `npm run client`
 
 ## classification-server
 `npm run server`
+
+## docker
+`docker-compose network create app-network`
+`docker-compose up -d`
 
 # Tools
 

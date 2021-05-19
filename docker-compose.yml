@@ -1,0 +1,38 @@
+version: '3.6'
+services:
+  nginx: 
+    image: nginx:latest
+    container_name: production_nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 80:80
+      # - 443:443
+    depends_on:
+      - classification-server
+      - classification-client
+    links:
+      - classification-server
+      - classification-client
+    networks:
+      - app-network
+  classification-server:
+    container_name: classification-server
+    build:
+      context: ./classification-server
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - app-network
+  
+  classification-client:
+    container_name: classification-client
+    build:
+      context: ./classification-client
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - app-network
+networks:
+    app-network:
+        external: true
