@@ -28,27 +28,40 @@ The classification depends on the number of words found in the text from the fol
 
 # Getting Started
 
-## pre-requisite
-`npm install`
+## pre-requisites 
+Node installed which can be installed [here](https://nodejs.org/en/download/) 
+
+Docker installed which can be installed [here](https://www.docker.com/) 
+
+run `npm install`
+
 
 ## modifying lists
 Modify the file `classification-lists.json` inside the classification-server folder
 
+
 ## classificationClient
-`npm run client`
+run `npm run client`
+
 
 ## classification-server
-`npm run server`
+run `npm run server`
+
 
 ## docker
-`docker-compose network create app-network`
-`docker-compose up -d`
+run `docker-compose network create app-network`
 
+run `docker-compose up -d`
+
+
+---
 # Tools
 
 ## Swagger docs
 Swagger documentation can be found at /api-docs
 
+
+---
 # Improvements
 
 ## server
@@ -56,6 +69,13 @@ In the server I would add a testing framework and unit tests to validate my work
 
 ## client
 I would build out some spec files with unit testing
+
 I would develop the colour schemes to not be default ionic
+
 I would implement a dark mode as I removed it as it didn't look nice with default colour scheme
+
 I would wireframe a solution first and demo that solution before implementing
+
+## CI/CD
+I would build both parts as part of a pipeline
+I would get the app running using Bitrise to build to the individual app stores
